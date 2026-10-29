@@ -2,30 +2,30 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101211"><meta name="description" content="Pachakutiq 的电子名片。夜之城传奇，保持联系。">
-<meta name="robots" content="noindex,nofollow"><title>Pachakutiq · 夜之城传奇</title>
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#080a10"><meta name="description" content="Pachakutiq · 夜之城传奇。接入个人频道，保持联系。">
+<meta name="robots" content="noindex,nofollow"><title>Pachakutiq // 夜之城传奇</title>
+<link rel="stylesheet" href="style.css?v=cyber-2">
 </head>
 <body>
-<div class="grid" aria-hidden="true"></div>
-<main class="card">
-<header><a class="wordmark" href="#" aria-label="名片首页">P<span>://</span></a><span class="edition">PERSONAL ACCESS CARD <i></i></span></header>
-<section class="identity" aria-label="个人介绍">
-<div class="eyebrow"><span class="signal"></span> NICE TO MEET YOU</div>
-<h1>Pachakutiq<span class="cursor" aria-hidden="true">_</span></h1>
-<p class="bio">夜之城传奇<span class="line" aria-hidden="true"></span></p>
-<div class="tag">LET'S CONNECT <span>↘</span></div>
+<div class="world" aria-hidden="true"><div class="grid-floor"></div><div class="scanlines"></div><div class="horizon"></div></div>
+<main class="terminal">
+<header class="topbar"><a href="#" class="brand" aria-label="名片首页">P<span>://</span><small>PERSONAL TERMINAL</small></a><button id="effects" class="fx-button" type="button" aria-pressed="true" aria-label="切换视觉动效"><span class="dot"></span> FX <span id="fx-state">ON</span></button></header>
+<section class="hero" aria-label="个人介绍">
+<div class="chapter"><span>档案已接入 <b>／</b> PROFILE LOADED</span><span class="cross">＋</span></div>
+<div class="city" aria-hidden="true"><svg viewBox="0 0 600 320" preserveAspectRatio="xMidYMax slice"><defs><linearGradient id="cityFade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#144b5b"/><stop offset="1" stop-color="#080a10"/></linearGradient><pattern id="windows" width="20" height="25" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="3" height="9" fill="#28d8d4" opacity=".45"/><rect x="13" y="8" width="2" height="5" fill="#d6eb43" opacity=".4"/></pattern></defs><path d="M0 320V197h31v-40h26v-26h34v189h12V112h38V91h14V45h4v46h18v21h28v208h14V185h34v-30h37v165h18V87h18V64h19V16h4v48h16v23h30v233h18V131h19V99h44v32h18v189h17V172h43v-24h16v172h13V209h41v111Z" fill="url(#cityFade)"/><path d="M0 320V197h31v-40h26v-26h34v189h12V112h38V91h14V45h4v46h18v21h28v208h14V185h34v-30h37v165h18V87h18V64h19V16h4v48h16v23h30v233h18V131h19V99h44v32h18v189h17V172h43v-24h16v172h13V209h41v111Z" fill="url(#windows)"/><path d="M0 282h600M0 295h600" stroke="#2af7ee" stroke-opacity=".2"/><path d="M326 87h34M103 136h101M399 163h63" stroke="#ff3b85" stroke-width="3" opacity=".7"/></svg><div class="city-rain"></div></div>
+<div class="hero-content"><div class="serial">PERSONAL FILE <span>01—</span></div><h1 aria-label="夜之城传奇"><span class="title-outline">夜之城</span><span class="title-solid" data-text="传奇">传奇<span class="hero-star" aria-hidden="true">✦</span></span></h1><p class="english-title">LEGENDS NEVER FADE<span aria-hidden="true">↗</span></p></div>
+<div class="identity"><div class="avatar" aria-hidden="true">P<span>01</span></div><div><p class="identity-label">代号 / HANDLE</p><p class="handle">Pachakutiq<span class="caret" aria-hidden="true">_</span></p></div><div class="identity-code" aria-hidden="true">▥<br>NC / 01</div></div>
+<div class="mission"><span class="mission-icon" aria-hidden="true">!</span><p><small>当前任务 / SIDE QUEST</small>交个朋友，保持信号。</p><span class="mission-arrow" aria-hidden="true">↓</span></div>
 </section>
-<section class="contact" aria-label="微信联系方式">
-<div class="section-label"><span>01 / WECHAT</span><span class="online">可添加好友</span></div>
-<div class="qr-wrap"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="qr"><img src="wechat-card.jpg" alt="Pachakutiq 的微信好友二维码" fetchpriority="high"></div></div>
-<p class="qr-caption">扫一扫，交个朋友<span>SCAN TO CONNECT</span></p>
-<button class="copy" id="copy" type="button" aria-label="复制微信号 Pachakutiq"><span><small>微信号</small><strong>Pachakutiq</strong></span><span class="copy-label">复制 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h4"/></svg></span></button>
-<a class="save" href="wechat-card.jpg" download="Pachakutiq-微信二维码.jpg">保存微信二维码 <span aria-hidden="true">↓</span></a>
-<details><summary>正在用自己的手机浏览？<span aria-hidden="true">＋</span></summary><div class="help"><p>保存二维码后，打开微信 → 右上角「＋」→「扫一扫」→ 从相册选择刚保存的图片。</p><p>也可以复制上方微信号，在微信「添加朋友」中粘贴搜索。添加好友仍需你在微信内确认。</p><p>若 iPhone 未直接保存图片，可打开图片后长按，选择「存储到照片」。</p></div></details>
-</section>
-<footer><span>保持联系。<br><b>SEE YOU AROUND.</b></span><span class="footer-mark" aria-hidden="true">↗</span></footer>
+<section class="contact" aria-label="微信联系方式"><div class="panel-top"><span><i></i> 建立联系</span><span>WECHAT // 01</span></div>
+<div class="panel-body"><div class="qr-head"><span>SCAN THE SIGNAL</span><span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div><div class="qr-frame"><div class="qr"><img src="wechat-card.jpg" alt="Pachakutiq 的微信好友二维码" fetchpriority="high"></div><span class="qr-corner tl"></span><span class="qr-corner tr"></span><span class="qr-corner bl"></span><span class="qr-corner br"></span><span class="frame-side" aria-hidden="true">CONNECT / CONTACT / CONNECT</span></div>
+<p class="qr-caption">扫一扫，接入我的频道<span>YOUR NEXT CONNECTION STARTS HERE.</span></p>
+<button class="copy" id="copy" type="button" aria-label="复制微信号 Pachakutiq"><span class="copy-info"><small>微信 ID / WECHAT ID</small><strong>Pachakutiq</strong></span><span class="copy-action">复制 ID <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12"/><path d="M15 8V3H3v12h5"/></svg></span></button>
+<a class="save" href="wechat-card.jpg" download="Pachakutiq-微信二维码.jpg"><span>保存微信二维码</span><span aria-hidden="true">↧</span></a>
+<details><summary>在这台手机上添加好友<span aria-hidden="true">＋</span></summary><div class="help"><p><b>01</b> 保存二维码，打开微信「扫一扫」，从相册选择图片。</p><p><b>02</b> 或复制微信号，在微信「添加朋友」中粘贴搜索。</p><p>iPhone 若未直接保存，可打开图片后长按，选择「存储到照片」。添加好友需要在微信内确认。</p></div></details>
+</div><div class="panel-bottom" aria-hidden="true"><span>END-TO-END HUMAN CONNECTION</span><span>▰ ▰ ▰ ▱</span></div></section>
+<footer><span class="footer-symbol" aria-hidden="true">P://</span><div><strong>城市不眠，信号不断。</strong><span>STAY CONNECTED. STAY YOU.</span></div><span class="footer-cross" aria-hidden="true">＋</span></footer>
+<div class="bottom-line" aria-hidden="true"><span>PERSONAL CONTACT ARCHIVE</span><div></div><span>EOF_</span></div>
 <p class="status" id="status" role="status" aria-live="polite"></p>
-</main>
-<script src="app.js"></script>
+</main><script src="app.js?v=cyber-2"></script>
 </body></html>

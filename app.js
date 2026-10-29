@@ -25,3 +25,16 @@ copyButton.addEventListener('click', async () => {
     else window.prompt('请长按复制微信号', 'Pachakutiq');
   }
 });
+
+const effectsButton = document.querySelector('#effects');
+const fxState = document.querySelector('#fx-state');
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+function setEffects(on) {
+  document.body.classList.toggle('fx-off', !on);
+  effectsButton.setAttribute('aria-pressed', String(on));
+  fxState.textContent = on ? 'ON' : 'OFF';
+}
+setEffects(!motionPreference.matches);
+effectsButton.addEventListener('click', () => {
+  setEffects(effectsButton.getAttribute('aria-pressed') !== 'true');
+});
