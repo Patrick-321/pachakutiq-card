@@ -27,14 +27,38 @@ copyButton.addEventListener('click', async () => {
 });
 
 const sandyButton = document.querySelector('#sandevistan');
+const sandyScreen = document.querySelector('#sandy-screen');
+const sandyClose = document.querySelector('#sandy-close');
+const card = document.querySelector('.card');
+let sandyTimer;
+let originalOverflow;
+function stopSandy() {
+  if (sandyScreen.hidden) return;
+  clearTimeout(sandyTimer);
+  sandyScreen.hidden = true;
+  card.inert = false;
+  document.body.style.overflow = originalOverflow;
+  document.body.classList.remove('sandevistan-active');
+  document.querySelector('#sync-state').textContent = 'READY';
+  sandyButton.disabled = false;
+  sandyButton.focus({preventScroll:true});
+}
 sandyButton.addEventListener('click', () => {
   if (sandyButton.disabled) return;
   sandyButton.disabled = true;
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.body.classList.add('sandevistan-active');
+  originalOverflow = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('sandevistan-active');
   document.querySelector('#sync-state').textContent = 'ACTIVE';
-  setTimeout(() => {
-    document.body.classList.remove('sandevistan-active');
-    document.querySelector('#sync-state').textContent = 'READY';
-    sandyButton.disabled = false;
-  }, 3000);
+  sandyScreen.hidden = false;
+  card.inert = true;
+  sandyClose.focus({preventScroll:true});
+  sandyTimer = setTimeout(stopSandy, 4600);
 });
+sandyClose.addEventListener('click', stopSandy);
+document.addEventListener('keydown', event => {
+  if (sandyScreen.hidden) return;
+  if (event.key === 'Escape') stopSandy();
+  if (event.key === 'Tab') { event.preventDefault(); sandyClose.focus(); }
+});
+document.addEventListener('visibilitychange', () => { if (document.hidden) stopSandy(); });
