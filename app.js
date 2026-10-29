@@ -26,39 +26,15 @@ copyButton.addEventListener('click', async () => {
   }
 });
 
-const effectsButton = document.querySelector('#effects');
-const fxState = document.querySelector('#fx-state');
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-function setEffects(on) {
-  document.body.classList.toggle('fx-off', !on);
-  effectsButton.setAttribute('aria-pressed', String(on));
-  fxState.textContent = on ? 'ON' : 'OFF';
-}
-setEffects(!motionPreference.matches);
-effectsButton.addEventListener('click', () => {
-  setEffects(effectsButton.getAttribute('aria-pressed') !== 'true');
-});
-
 const sandyButton = document.querySelector('#sandevistan');
-let sandyTimer;
-function activateSandy() {
+sandyButton.addEventListener('click', () => {
   if (sandyButton.disabled) return;
   sandyButton.disabled = true;
-  const visual = effectsButton.getAttribute('aria-pressed') === 'true';
-  document.body.classList.toggle('sandevistan-active', visual);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.body.classList.add('sandevistan-active');
   document.querySelector('#sync-state').textContent = 'ACTIVE';
-  document.querySelector('#implant-note').textContent = visual ? '神经加速中 / 5 秒后自动恢复' : '神经连接成功 / 动效已关闭';
-  sandyTimer = setTimeout(() => {
+  setTimeout(() => {
     document.body.classList.remove('sandevistan-active');
     document.querySelector('#sync-state').textContent = 'READY';
-    document.querySelector('#implant-note').textContent = '冷却完成 / 随时可以再次启动';
     sandyButton.disabled = false;
-  }, 5000);
-}
-sandyButton.addEventListener('click', activateSandy);
-effectsButton.addEventListener('click', () => {
-  if (effectsButton.getAttribute('aria-pressed') === 'false') document.body.classList.remove('sandevistan-active');
-});
-document.addEventListener('keydown', event => {
-  if (event.key.toLowerCase() === 'e' && !event.repeat && !event.metaKey && !event.ctrlKey && !event.altKey && !/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) activateSandy();
+  }, 3000);
 });
