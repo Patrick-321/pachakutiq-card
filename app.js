@@ -9,11 +9,11 @@ function notify(text) {
 }
 copyButton.addEventListener('click', async () => {
   try {
-    await navigator.clipboard.writeText('Pachakutiq');
+    await navigator.clipboard.writeText('SmaragdineTablet');
     notify('微信号已复制，去微信添加朋友');
   } catch {
     const input = document.createElement('textarea');
-    input.value = 'Pachakutiq';
+    input.value = 'SmaragdineTablet';
     input.style.position = 'fixed';
     input.style.opacity = '0';
     document.body.append(input);
@@ -22,7 +22,7 @@ copyButton.addEventListener('click', async () => {
     const copied = document.execCommand('copy');
     input.remove();
     if (copied) notify('微信号已复制，去微信添加朋友');
-    else window.prompt('请长按复制微信号', 'Pachakutiq');
+    else window.prompt('请长按复制微信号', 'SmaragdineTablet');
   }
 });
 
